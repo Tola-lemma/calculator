@@ -1,0 +1,7 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+  }
+.calculator-background{
+    height: 700px;
+    background:linear-gradient(to right,#00AAff,#00FF6C)
+  }
