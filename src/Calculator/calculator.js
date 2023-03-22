@@ -105,6 +105,14 @@ function evaluation({currentOperands,prevOperand,operation}) {
   }
   return computation.toString();
   }
+const INTEGER_FORMATERS = new Intl.NumberFormat("en-us",{maximumFractionDigits:0})
+function formatOperands(operand) {
+    if(operand==null) return
+    const [integer,decimal] = operand.split('.')
+    if(decimal==null) return INTEGER_FORMATERS.format(integer)
+    return `${INTEGER_FORMATERS.format(integer)}.${decimal}`
+
+}
 export const  Calculator=()=> {
   const [{currentOperands,prevOperand,operation},dispatch] = useReducer(reducer,{});
   return (
@@ -112,8 +120,8 @@ export const  Calculator=()=> {
       <a href='https://github.com/Tola-lemma/calculator' style={{fontSize:"2rem",fontWeight:"bold",marginLeft:"85rem"}}><i className="fa-brands fa-github"></i></a>
     <div className="calculator-grid">
       <div className='output'>
-         <div className='prev-operands'>{prevOperand}{operation}</div>
-         <div className='second-operands'>{currentOperands}</div>
+         <div className='prev-operands'>{formatOperands(prevOperand)}{operation}</div>
+         <div className='second-operands'>{formatOperands(currentOperands)}</div>
       </div>
       <button className="span-two" onClick={()=>dispatch({type:ACTIONS.CLEAR})}>AC</button>
       <button onClick={()=>dispatch({type:ACTIONS.DELETE_DIGITS})}>DEL</button>
