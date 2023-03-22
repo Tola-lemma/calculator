@@ -4,6 +4,7 @@ import './calculator.css';
 export const  Calculator=()=> {
   return (
     <div className='calculator-background'>
+      <a href='https://github.com/Tola-lemma/calculator' style={{fontSize:"2rem",fontWeight:"bold",marginLeft:"85rem"}}><i className="fa-brands fa-github"></i></a>
     <div className="calculator-grid">
       <div className='output'>
          <div className='prev-operands'>7</div>
