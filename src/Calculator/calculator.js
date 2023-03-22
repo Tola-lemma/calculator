@@ -115,8 +115,8 @@ export const  Calculator=()=> {
          <div className='prev-operands'>{prevOperand}{operation}</div>
          <div className='second-operands'>{currentOperands}</div>
       </div>
-      <button className="span-two">AC</button>
-      <button>DEL</button>
+      <button className="span-two" onClick={()=>dispatch({type:ACTIONS.CLEAR})}>AC</button>
+      <button onClick={()=>dispatch({type:ACTIONS.DELETE_DIGITS})}>DEL</button>
       <OperationButton operation="+" dispatch={dispatch} />
 
       <DigitButton digit="1" dispatch={dispatch}/>
@@ -136,7 +136,7 @@ export const  Calculator=()=> {
 
       <DigitButton digit="." dispatch={dispatch}/>
       <DigitButton digit="0" dispatch={dispatch}/>
-      <button className="span-two">=</button>
+      <button className="span-two" onClick={()=>dispatch({type:ACTIONS.EVALUATIONS})}>=</button>
     </div>
     </div>
   );
