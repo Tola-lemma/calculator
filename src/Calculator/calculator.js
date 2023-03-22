@@ -46,7 +46,7 @@ case ACTIONS.CHOOSE_OPERATION:
       }
       return{
           ...state,
-          //
+          prevOperand:evaluation(state),
           operation: payload.operation,
           currentOperands: null
       }
@@ -61,7 +61,7 @@ case ACTIONS.EVALUATIONS:
       overwrite:true,
       operation:null,
       prevOperand:null,
-      //
+      currentOperands:evaluation(state)
   }
 case ACTIONS.DELETE_DIGITS:
   if (state.overwrite){
@@ -83,6 +83,28 @@ case ACTIONS.DELETE_DIGITS:
       return state
   }
 }
+function evaluation({currentOperands,prevOperand,operation}) {
+  const prev = parseFloat(prevOperand);
+  const current = parseFloat(currentOperands);
+  if(isNaN(current) ||isNaN(prev)) return ""
+  let computation = ""
+  switch (operation){
+      case "+":
+          computation = prev + current;
+          break;
+      case "-":
+          computation = prev - current;
+          break;
+      case "*":
+          computation = prev * current;
+          break;
+      case "/":
+          computation = prev / current;
+          break;
+      default:return Error 
+  }
+  return computation.toString();
+  }
 export const  Calculator=()=> {
   const [{currentOperands,prevOperand,operation},dispatch] = useReducer(reducer,{});
   return (
