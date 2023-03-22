@@ -117,7 +117,7 @@ export const  Calculator=()=> {
   const [{currentOperands,prevOperand,operation},dispatch] = useReducer(reducer,{});
   return (
     <div className='calculator-background'>
-      <a href='https://github.com/Tola-lemma/calculator' style={{fontSize:"2rem",fontWeight:"bold",marginLeft:"85rem"}}><i className="fa-brands fa-github"></i></a>
+      <a href='https://github.com/Tola-lemma/calculator' style={{fontSize:"2rem",fontWeight:"bold",marginLeft:"78rem"}}><i className="fa-brands fa-github"></i></a>
     <div className="calculator-grid">
       <div className='output'>
          <div className='prev-operands'>{formatOperands(prevOperand)}{operation}</div>
