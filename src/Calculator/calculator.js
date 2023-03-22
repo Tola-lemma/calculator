@@ -9,7 +9,7 @@ export const  Calculator=()=> {
          <div className='prev-operands'>7</div>
          <div className='second-operands'>3+4</div>
       </div>
-      <button>AC</button>
+      <button className="span-two">AC</button>
       <button>DEL</button>
       <button>+</button>
 
@@ -28,9 +28,9 @@ export const  Calculator=()=> {
       <button>9</button>
       <button>-</button>
 
-      <button>0</button>
       <button>.</button>
-      <button>=</button>
+      <button>0</button>
+      <button className="span-two">=</button>
     </div>
     </div>
   );
