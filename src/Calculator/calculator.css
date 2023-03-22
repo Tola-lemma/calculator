@@ -2,7 +2,7 @@
     box-sizing: border-box;
   }
 .calculator-background{
-    height: 700px;
+    height: 690px;
     background:linear-gradient(to right,#00AAff,#00FF6C)
   }
   .calculator-grid{
@@ -25,4 +25,21 @@
     padding: .75rem;
     word-wrap: break-word;
     word-break: break-all;
+  }
+  .output .prev-operands{
+    color: rgb(255,255,255,.75);
+    font-size: 1.5rem;
+  }
+  .output .second-operands{
+    color: white;
+    font-size: 2.5rem;
+  }.calculator-grid >button{
+    cursor: pointer;
+    font-size: 1.5rem;
+    border: 1px solid white;
+    background-color: rgb(255,255,255,.75);
+  }
+  .calculator-grid >button:hover,
+  .calculator-grid >button:focus{
+    background-color: rgb(255,255,255,.9);
   }
